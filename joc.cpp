@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #include "joc.h"
 using namespace std;
+Agent::Agent() : delta(), x(-1), y(-1), id(-1) {};
 Agent1:: Agent1() {
   for(int i = -2; i <= 2; ++i)
     for(int j = -2; j <= 1; ++j)
@@ -50,6 +51,9 @@ void Map:: printMap() {
     it->status ();
 }
 
+Map:: Map() : lista_agenti() {
+  matrix = vector<vector<int>>(MAP_N, vector<int>(MAP_M, -1));
+}
 Map:: ~Map() {
   vector<shared_ptr<Agent>>().swap(lista_agenti);
   vector<vector<int>>().swap(matrix);
