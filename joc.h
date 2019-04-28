@@ -4,7 +4,7 @@ using namespace std;
 static const int MAP_N = 20, MAP_M = 20;
 class Agent {
 public:
-	 Agent() : delta(), x(-1), y(-1), id(-1) {};
+	 Agent();
 	void set(const int&, const int&, const int&);
 	void set(const int&, const int&);
 	virtual void status() = 0;
@@ -50,9 +50,7 @@ class Map {
 	vector<vector<int> > matrix;
 
 	public:
-	Map() : lista_agenti() {
-		matrix = vector<vector<int>>(MAP_N, vector<int>(MAP_M, -1));
-	}
+	Map();
 	~Map();
 	template <class T>void spread(const vector<pair<int, int>>&);
 	void distribuire();
